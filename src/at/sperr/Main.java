@@ -46,16 +46,16 @@ public class Main extends Application {
         //Implementing the conversion from Celsius to Fahrenheit
         EventHandler<MouseEvent> fahr_cels_conv = new EventHandler<MouseEvent>() {
             @Override
-            public void handle(MouseEvent mouseEvent)
-            {
+            public void handle(MouseEvent mouseEvent) {
                 try {
                     double fahr_value = Double.parseDouble(fahr_field.getText());
-                    double cels_value = (fahr_value-32)*5/9;
+                    double cels_value = (fahr_value - 32) * 5 / 9;
                     cels_field.setText(String.valueOf(cels_value));
-                } catch (Exception e)
-                {
+                } catch (Exception e) {
                     System.out.println("Fehlerhafter Wert! Versuchen Sie es erneut!");
                 }
+            }
+        };
         //Implementing the Celsius to Fahrenheit Conversion
         EventHandler<MouseEvent> cels_fahr_conv = new EventHandler<MouseEvent>() {
             @Override
