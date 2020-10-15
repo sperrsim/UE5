@@ -21,15 +21,37 @@ public class Main extends Application {
 
         //Creating Labels for the Values
         Label cels_label = new Label("°Celsius");
+        cels_label.setMaxHeight(25);
+        cels_label.setStyle("-fx-font-size: 20px;" +
+                            "-fx-font-weight: bold;");
         Label fahr_label = new Label("°Fahrenheit");
+        fahr_label.setMaxHeight(25);
+        fahr_label.setStyle("-fx-font-size: 20px;" +
+                            "-fx-font-weight: bold;");
 
         //Creating Textfields for the Values
         TextField cels_field = new TextField();
+        cels_field.setPromptText("Grad Celsius Wert");
+        cels_field.setPrefHeight(20);
+        cels_field.setMaxWidth(300);
+        cels_field.setStyle("-fx-font-size: 15px;");
         TextField fahr_field = new TextField();
+        fahr_field.setPromptText("Grad Fahrenheit Wert");
+        fahr_field.setPrefHeight(20);
+        fahr_field.setMaxWidth(300);
+        fahr_field.setStyle("-fx-font-size: 15px;");
 
         //Creating the Buttons for the conversion
         Button cels_fahr = new Button("Celsius -> Fahrenheit");
+        cels_fahr.setPrefWidth(300);
+        cels_fahr.setMaxHeight(25);
+        cels_fahr.setStyle("-fx-font-weight: bold;" +
+                            "-fx-font-size: 20px;");
         Button fahr_cels = new Button("Fahrenheit -> Celsius");
+        fahr_cels.setPrefWidth(300);
+        fahr_cels.setMaxHeight(25);
+        fahr_cels.setStyle("-fx-font-weight: bold;" +
+                            "-fx-font-size: 20px;");
 
         //Putting everything together
         converter.getChildren().addAll(cels_label, cels_field, fahr_label, fahr_field, cels_fahr, fahr_cels);
