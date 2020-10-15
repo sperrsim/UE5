@@ -43,7 +43,6 @@ public class Main extends Application {
         fahr_field.setMaxWidth(300);
         fahr_field.setStyle("-fx-font-size: 15px;");
 
-<<<<<<< HEAD
         //Implementing the conversion from Celsius to Fahrenheit
         EventHandler<MouseEvent> fahr_cels_conv = new EventHandler<MouseEvent>() {
             @Override
@@ -54,7 +53,9 @@ public class Main extends Application {
                     double cels_value = (fahr_value-32)*5/9;
                     cels_field.setText(String.valueOf(cels_value));
                 } catch (Exception e)
-=======
+                {
+                    System.out.println("Fehlerhafter Wert! Versuchen Sie es erneut!");
+                }
         //Implementing the Celsius to Fahrenheit Conversion
         EventHandler<MouseEvent> cels_fahr_conv = new EventHandler<MouseEvent>() {
             @Override
@@ -65,7 +66,6 @@ public class Main extends Application {
                     double fahr_value = (cels_value * 9/5) + 32;
                     fahr_field.setText(String.valueOf(fahr_value));
                 }catch (Exception e)
->>>>>>> feature_B
                 {
                     System.out.println("Fehlerhafter Wert! Versuchen Sie es erneut!");
                 }
