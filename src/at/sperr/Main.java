@@ -1,11 +1,13 @@
 package at.sperr;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -41,6 +43,22 @@ public class Main extends Application {
         fahr_field.setMaxWidth(300);
         fahr_field.setStyle("-fx-font-size: 15px;");
 
+        //Implementing the conversion from Celsius to Fahrenheit
+        EventHandler<MouseEvent> fahr_cels_conv = new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent)
+            {
+                try {
+                    double fahr_value = Double.parseDouble(fahr_field.getText());
+                    double cels_value = (fahr_value-32)*5/9;
+                    cels_field.setText(String.valueOf(cels_value));
+                } catch (Exception e)
+                {
+                    System.out.println("Fehlerhafter Wert! Versuchen Sie es erneut!");
+                }
+            }
+        };
+
         //Creating the Buttons for the conversion
         Button cels_fahr = new Button("Celsius -> Fahrenheit");
         cels_fahr.setPrefWidth(300);
@@ -52,6 +70,7 @@ public class Main extends Application {
         fahr_cels.setMaxHeight(25);
         fahr_cels.setStyle("-fx-font-weight: bold;" +
                             "-fx-font-size: 20px;");
+        fahr_cels.addEventHandler(MouseEvent.MOUSE_CLICKED, fahr_cels_conv);
 
         //Putting everything together
         converter.getChildren().addAll(cels_label, cels_field, fahr_label, fahr_field, cels_fahr, fahr_cels);
