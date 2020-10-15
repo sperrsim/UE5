@@ -31,6 +31,8 @@ public class Main extends Application {
         Button cels_fahr = new Button("Celsius -> Fahrenheit");
         Button fahr_cels = new Button("Fahrenheit -> Celsius");
 
+        //Putting everything together
+        converter.getChildren().addAll(cels_label, cels_field, fahr_label, fahr_field, cels_fahr, fahr_cels);
 
         //Creating the Window
         Scene scene = new Scene(converter, 500,500);
